@@ -1,0 +1,146 @@
+regular expressions
+*.find specific patterns
+
+\ - skip
+
+. matches any character except new line
+\. find only dot
+\d digit 0-9
+\D not a digit 0-9
+\w word az AZ 0-9
+\W not a word character
+\s whitespace (space, tab, newline)
+\S not white space(space, tab, newline)
+
+\b word boundary :(boundary : starting and ending of word) 
+\B not a word boundary : 
+Ha HaHa : first Ha and second has starting boundary
+first Ha has starting and ending boundary
+
+\bword - starting boundary
+word\b - ending boundary
+\bword\b - starting and ending boundary
+
+^ beginning of a sting
+$ end of a string
+
+-------------------------------
+phone number:
+321-555-4321
+123.444.4322
+243*423*0394
+
+eg : include  - . and *
+\d\d\d.\d\d\d.\d\d\d\d
+
+. - matches any char
+\. - only dot
+
+
+eg : only match . or - and skip *
+[] = character set
+\d\d\d[-.]\d\d\d[-.]\d\d\d\d
+
+
+above pattern will not match : 343--234-4324
+
+only to find numbers with 800 and 900
+pattern [89]00[-.]\d\d\d[-.]\d\d\d\d
+
+
+------------------
+first 3 not a number
+ex : rat-343-565
+
+
+pattern : \D\D\D.\d\d\d.\d\d\d
+
+
+-----------------
+
+find numbers between 1 and 7
+
+pattern : [a-z] all small alphabets 
+[a-zA-Z] : all alphabets
+[^a-z] : is nt lower case
+
+
+---------
+cat
+mat
+pat
+bat
+
+[^b]at : finds all words end with 'at' except starts from b
+
+
+
+
+
+
+
+---------------------------------
+
+
+quantifiers
+
+* - 0 or more
++ - 1 or more
+? - 0 or one
+{3} - Exact number
+{3,4} - range of numbers (min, max)
+
+-----------------------------
+333-333-3234
+\d{3}.\d{3}.\d{4}
+
+---------------------------------
+Mr. Seter
+Mr Smith
+
+Mr\.?\S[A_Z]\w*
+
+------------------------------
+groups
+
+Mr
+Mrs
+Ms
+
+M(r|s|rs)
+
+
+-------------------------------------
+email id
+CoreyMSchafer@gmail.com
+corey.schafer@university.edu
+corey-321-schafer@my-work.net
+
+[a-zA-Z]+@[a-zA-Z]+\.com matches first
+[a-zA-Z.]+@[a-zA-Z]+\.(com|edu) matches second
+[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)
+
+other example
+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-0-.]+
+
+--------------------------------------
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+
+https?://(www\.)?\w+\.\w+
+
+s? - zero or one for s
+(www\.)? - zero or one (like optional)
+
+
+
+
+
+
+
+
+
+
+
